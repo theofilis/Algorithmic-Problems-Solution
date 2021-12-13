@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Algorithms.csproj", "{1C37F103-0AEA-4C37-83DE-FD7D2FEEB7EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Benchmark", "Algorithms.Benchmark\Algorithms.Benchmark.csproj", "{408911A5-3D2D-41F0-826A-40730AFB3C17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionsFiles", "SolutionsFiles", "{13F3E596-8AA4-4D38-9EAA-2FA35B0BBDA3}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C37F103-0AEA-4C37-83DE-FD7D2FEEB7EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C37F103-0AEA-4C37-83DE-FD7D2FEEB7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C37F103-0AEA-4C37-83DE-FD7D2FEEB7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C37F103-0AEA-4C37-83DE-FD7D2FEEB7EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{408911A5-3D2D-41F0-826A-40730AFB3C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{408911A5-3D2D-41F0-826A-40730AFB3C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{408911A5-3D2D-41F0-826A-40730AFB3C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{408911A5-3D2D-41F0-826A-40730AFB3C17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
