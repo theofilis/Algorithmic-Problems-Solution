@@ -4,8 +4,22 @@ namespace Algorithms.Benchmark;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static int Main(string[] args)
     {
-        var summary = BenchmarkRunner.Run<PalindromeBenchmarks>();
+        try
+        {
+            BenchmarkSwitcher
+                .FromAssembly(typeof(Program).Assembly)
+                .Run(args);
+
+            return 0;
+        }
+        catch (Exception ex)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(ex.Message);
+            Console.ResetColor();
+            return 1;
+        }
     }
 }

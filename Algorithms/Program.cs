@@ -5,14 +5,13 @@ namespace Algorithms;
 
 public class Program
 {
-    public static void Main()
+    public static async Task Main()
     {
         // var word = "rapanaki";
         // var d = Palindrome.Search(word);
         // Console.WriteLine(d.ToPrettyString(word.Length));
 
-        var d = new Day1();
-
-        d.Solve(Part.PartA, false);
+        var d = new Day2();
+        await d.Solve(Part.PartB, false);
     }
 }

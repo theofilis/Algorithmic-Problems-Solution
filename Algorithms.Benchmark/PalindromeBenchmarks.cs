@@ -8,6 +8,7 @@ public class PalindromeBenchmarks
     [Benchmark]
     public void Scenario1()
     {
-        var p = Palindrome.Search("rapanaki");
+        const string word = "rapanaki";
+        var result = Palindrome.Search(word);
     }
 }

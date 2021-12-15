@@ -4,17 +4,15 @@
         <TargetFramework>net6.0</TargetFramework>
         <OutputType>Exe</OutputType>
         <ImplicitUsings>enable</ImplicitUsings>
-        <EnablePreviewFeatures>true</EnablePreviewFeatures>
-        <LangVersion>preview</LangVersion>
+        <LangVersion>10</LangVersion>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="System.Runtime.Experimental" Version="6.0.0"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <None Update="Inputs\*\*\*.*">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Inputs\2020\Inputs\01.txt">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>

@@ -6,56 +6,50 @@ namespace Algorithms.Problems.Y2020;
 
 public class Day1 : ProblemBase<int[], int>
 {
-    protected override int[] GetInput()
+    protected override string Year => "2020";
+
+    protected override string Day => "01";
+
+    protected override int[] Parse(string path)
     {
-        return Path.Combine("Inputs", "2020", "Day1", "Input.txt")
+        return path
             .ReadInput()
             .ToIntegerArray()
             .OrderByDescending(line => line)
             .ToArray();
     }
 
-    protected override int[] GetTestInput()
-    {
-        return Path.Combine("Inputs", "2020", "Day1", "Test.txt")
-            .ReadInput()
-            .ToIntegerArray()
-            .OrderByDescending(line => line)
-            .ToArray();
-    }
-
-    protected override int SolvePartA(int[] numbers)
+    protected override Task<int> SolvePartA(int[] numbers)
     {
         foreach (var number in numbers)
         {
             var strategy = new BinarySearchAlgorithm<int>(numbers);
             var position = strategy.Search(number, (a, b) => 2020 - (a + b));
             if (position <= 0) continue;
-            Console.WriteLine($"A = {numbers[position]}, B = {number}, O = {numbers[position] * number}");
-            return numbers[position] * number;
+            // Console.WriteLine($"A = {numbers[position]}, B = {number}, O = {numbers[position] * number}");
+            return Task.FromResult(numbers[position] * number);
         }
 
-        return -1;
+        return Task.FromResult(-1);
     }
 
-    protected override int SolvePartB(int[] inputs)
+    protected override Task<int> SolvePartB(int[] instances)
     {
-        var permutations = inputs
+        var permutations = instances
             .GetPermutations(2)
             .Where(c => c.Sum() < 2020)
             .ToArray();
 
         foreach (var permutation in permutations)
         {
-            var strategy = new BinarySearchAlgorithm<int>(inputs);
+            var strategy = new BinarySearchAlgorithm<int>(instances);
             var numbers = permutation.ToArray();
             var position = strategy.Search(numbers, (a, b) => 2020 - (a.Sum() + b));
             if (position <= 0) continue;
-            Console.WriteLine(
-                $"A={numbers[0]}, B={numbers[1]}, C={inputs[position]} S={numbers[0] * numbers[1] * inputs[position]}");
-            return numbers[0] * numbers[1] * inputs[position];
+            // Console.WriteLine($"A={numbers[0]}, B={numbers[1]}, C={inputs[position]} S={numbers[0] * numbers[1] * inputs[position]}");
+            return Task.FromResult(numbers[0] * numbers[1] * instances[position]);
         }
 
-        return -1;
+        return Task.FromResult(-1);
     }
 }
